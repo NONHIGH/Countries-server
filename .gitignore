@@ -1,0 +1,29 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependencias
+/vendor/
+
+# Archivos de configuración
+.env
+.env.local
+.env.*.local
+
+# Directorio de construcción
+/build
+/dist
+
+# Editor/IDE específico
+.vscode/
+.idea/
+
+# Archivos de respaldo
+*.bak
+*.swp
+
+# Archivos de caché
+.cache/
+*.log
