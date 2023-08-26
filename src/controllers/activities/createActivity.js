@@ -3,19 +3,20 @@ const Country = require('../../database/models/Country');
 
 const createActivity = async (request, response) => {
     try {
-        const { name, difficulty, duration, season, idsCountry } = request.body;
-        if (!name || !difficulty || !duration || !season || !idsCountry) {
+        const { name, difficulty, duration, season, countries } = request.body;
+
+        if (!name || !difficulty || !duration || !season || !countries) {
             return response.status(400).send({
                 "error": "required data is missing"
             });
         }
-
+        ;
         const created = await Activity.create({
             name, difficulty, duration, season
         });
         const countriesFound = await Country.findAll({
             where: {
-                id: idsCountry
+                id: countries
             }
         })
         await created.addCountries(countriesFound);

@@ -13,11 +13,6 @@ const getCountriesMatchingName = async (request, response) => {
                     }
                 }
             });
-            if (countriesFounds.length === 0) {
-                return response.status(404).send({
-                    "error": "No countries found"
-                });
-            }
 
             return response.status(200).send(countriesFounds);
         } else {
